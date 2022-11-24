@@ -1,17 +1,50 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
 
+    const { createUser, updateUser, user } = useContext(AuthContext);
+    const [signUpError, setsignUpError] = useState('')
+
+    console.log(user)
+
     const handleSignUp = event => {
         event.preventDefault();
+        setsignUpError('');
         const form = event.target;
         const email = form.email.value;
         const name = form.name.value;
         const password = form.password.value;
         const userType = form.userType.value;
 
-        console.log(name, email, password, userType)
+        // const date = new Date().toISOString().slice(0, 10)
+        // console.log(date)
+
+        // console.log(name)
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(name)
+                toast('user created successfully')
+                const userInfo = {
+                    displayName: name
+                }
+                updateUser(userInfo)
+                    .then(() => { })
+                    .catch(err => console.log(err))
+            })
+
+            .catch(error => {
+                console.log(error);
+                setsignUpError(error.message)
+
+            });
+
+
+
 
     }
     return (
@@ -54,6 +87,9 @@ const SignUp = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+                    {
+                        signUpError && <p className='text-red-600'>{signUpError}</p>
+                    }
                     <p className='mx-auto my-3'>Already have an account<Link to='/login'><span className=' mx-2 text-orange-600'>Login</span></Link> </p>
                 </div>
             </div>

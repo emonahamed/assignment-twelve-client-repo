@@ -1,17 +1,42 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Login = () => {
 
+
+    const { signIn } = useContext(AuthContext);
+    const [loginError, setLoginError] = useState('');
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || '/';
+
     const handleLogin = event => {
         event.preventDefault();
-
+        setLoginError('');
         const form = event.target;
         const email = form.email.value;
-
         const password = form.password.value;
 
-        console.log(email, password)
+        // console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                navigate(from, { replace: true });
+
+            })
+            .catch(error => {
+                console.log(error.message)
+                setLoginError(error.message)
+            })
+
+
+
+
+
     }
 
 
@@ -39,6 +64,9 @@ const Login = () => {
                             </label>
                             <input name='password' type="password" placeholder="password" className="input input-bordered" />
                         </div>
+                        <div>
+                            {loginError && <p className='text-red-600'>{loginError}</p>}
+                        </div>
 
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
@@ -46,6 +74,7 @@ const Login = () => {
                     </form>
                     <p className='mx-auto my-3'>New to this website<Link to='/signup'><span className=' mx-2 text-orange-600'>SignUp</span></Link> </p>
                 </div>
+
             </div>
         </div>
     );
