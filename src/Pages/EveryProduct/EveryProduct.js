@@ -1,10 +1,14 @@
 import React from 'react';
+import BookingModal from '../BookingModal/BookingModal';
 
-const EveryProduct = ({ category }) => {
+const EveryProduct = ({ category, setCardDetails }) => {
     // console.log(category);
 
+
+
+
     const { category: ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse, picture } = category;
-    console.log(ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse)
+    // console.log(ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse)
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
@@ -17,10 +21,15 @@ const EveryProduct = ({ category }) => {
                     <p className="py-1 text=xl"> <span className='text-orange-600'> Resale Price : </span>{resalePrice}</p>
                     <p className="py-1 text=xl"> <span className='text-orange-600'>Seller Name : </span>{sellerName}</p>
                     <p className="py-1 text=xl"> <span className='text-orange-600'>Years Of Use : </span>{yearsOfUse}</p>
-                    <button className="btn btn-sm ">Book Now</button>
+                    <label
+
+                        onClick={() => setCardDetails(category)}
+                        htmlFor="my-modal-3" className="btn">Booking Now</label>
+                    {/* <BookingModal category={category}></BookingModal> */}
                 </div>
             </div>
         </div>
+
     );
 };
 

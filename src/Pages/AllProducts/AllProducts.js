@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import BookingModal from '../BookingModal/BookingModal';
 import EveryProduct from '../EveryProduct/EveryProduct';
 
 const AllProducts = () => {
     const [categoryProduct, setcategoryProduct] = useState([]);
+    const [cardDetails, setCardDetails] = useState(null);
 
     const categoryName = useParams();
     console.log(categoryName.id);
@@ -19,11 +21,22 @@ const AllProducts = () => {
 
     return (
         <div>
-            {
-                categoryProduct.map(category => <EveryProduct
-                    category={category}
+            <section>
+                {
+                    categoryProduct.map(category => <EveryProduct
+                        category={category}
+                        setCardDetails={setCardDetails}
 
-                ></EveryProduct>)
+                    ></EveryProduct>)
+                }
+            </section>
+            {cardDetails &&
+
+
+                <BookingModal
+                    cardDetails={cardDetails}
+                    setCardDetails={setCardDetails}
+                ></BookingModal>
             }
         </div>
     );
