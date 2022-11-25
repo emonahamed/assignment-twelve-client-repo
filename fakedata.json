@@ -1,0 +1,94 @@
+[
+    {
+        "category": "iphone",
+        "picture": "https://i.ibb.co/FqJWk5F/3df5ca6a9b470f715b085991144a5b76e70da975.webp",
+        "location": "gulshan",
+        "resalePrice": "30000",
+        "originalPrice": "60000",
+        "yearsOfUse": "1years",
+        "postedDate": "23/11/2020",
+        "sellerName": "Emon",
+        "status": "verified",
+        "name": "iphone 11"
+    },
+    {
+        "category": "samsung",
+        "picture": "https://i.ibb.co/WFLwVnK/anh-nhat-12s-Om8-WCVBQ-unsplash.jpg",
+        "location": "Shahjadpur",
+        "resalePrice": "40000",
+        "originalPrice": "80000",
+        "yearsOfUse": "2years",
+        "postedDate": "24/11/2020",
+        "sellerName": "Razib",
+        "status": "verified",
+        "name": "samsung s21 ultra"
+    },
+    {
+        "category": "xiaomi",
+        "picture": "https://i.ibb.co/nPNbLX8/xingye-jiang-i3eek-DPHd-RQ-unsplash.jpg",
+        "location": "Badda",
+        "resalePrice": "50000",
+        "originalPrice": "100000",
+        "yearsOfUse": "3years",
+        "postedDate": "25/11/2020",
+        "sellerName": "Abir",
+        "name": "xiaomi ultra"
+    },
+    {
+        "category": "oneplus",
+        "picture": "https://i.ibb.co/gTmDkfy/erik-skof-xg-Im-Lxtm-RM4-unsplash.jpg",
+        "location": "gulshan",
+        "resalePrice": "30000",
+        "originalPrice": "60000",
+        "yearsOfUse": "4years",
+        "postedDate": "26/11/2020",
+        "sellerName": "Abak",
+        "status": "verified",
+        "name": "oneplus 10 pro"
+    },
+    {
+        "category": "iphone",
+        "picture": "https://i.ibb.co/g7QFmQY/kevin-bhagat-Co-us-Q-kp-O0-unsplash.jpg",
+        "location": "Bannani",
+        "resalePrice": "15000",
+        "originalPrice": "60000",
+        "yearsOfUse": "1.5 years",
+        "postedDate": "27/11/2020",
+        "sellerName": "Abak",
+        "status": "verified",
+        "name": "iphone x"
+    },
+    {
+        "category": "samsung",
+        "picture": "https://i.ibb.co/xqjXY4Y/zana-latif-5u-JMG9f-UAO0-unsplash.jpg",
+        "location": "barishal",
+        "resalePrice": "22000",
+        "originalPrice": "80000",
+        "yearsOfUse": "2.5 years",
+        "postedDate": "28/11/2020",
+        "sellerName": "Ibrahim",
+        "name": "samsung note 10"
+    },
+    {
+        "category": "xiaomi",
+        "picture": "https://i.ibb.co/QHJ5WGw/zana-latif-vu-POPx-Pa4-Q8-unsplash.jpg",
+        "location": "barishal",
+        "resalePrice": "28000",
+        "originalPrice": "76000",
+        "yearsOfUse": "3 years",
+        "postedDate": "29/11/2020",
+        "sellerName": "jahid",
+        "name": "xiaomi note 10"
+    },
+    {
+        "category": "oneplus",
+        "picture": "https://i.ibb.co/LZzWCfq/shubham-bombarde-gtouugazq-Oc-unsplash.jpg",
+        "location": "Rajshahi",
+        "resalePrice": "32000",
+        "originalPrice": "65000",
+        "yearsOfUse": "2 years",
+        "postedDate": "30/11/2020",
+        "sellerName": "Mamun",
+        "name": "oneplus 8"
+    }
+]
