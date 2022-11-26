@@ -35,7 +35,8 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        navigate('/');
+                        saveUser(name, email, userType);
+
                     })
                     .catch(err => console.log(err))
             })
@@ -45,6 +46,28 @@ const SignUp = () => {
                 setsignUpError(error.message)
 
             });
+
+
+        const saveUser = (name, email, userType) => {
+            const user = {
+                name,
+                email,
+                role: userType
+            };
+            fetch('http://localhost:5000/users', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log("save user", data);
+                    navigate('/');
+                })
+        }
+
 
 
 
@@ -87,7 +110,7 @@ const SignUp = () => {
                             </select>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Sign Up</button>
                         </div>
                     </form>
                     {
