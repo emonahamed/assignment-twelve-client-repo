@@ -24,7 +24,7 @@ const EveryProduct = ({ category, setCardDetails }) => {
                     <label
 
                         onClick={() => setCardDetails(category)}
-                        htmlFor="my-modal-3" className="btn">Booking Now</label>
+                        htmlFor="my-modal-3" className="btn btn-sm">Book  Now</label>
                     {/* <BookingModal category={category}></BookingModal> */}
                 </div>
             </div>

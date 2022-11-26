@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
 
     const { createUser, updateUser, user } = useContext(AuthContext);
-    const [signUpError, setsignUpError] = useState('')
+    const [signUpError, setsignUpError] = useState('');
+    const navigate = useNavigate();
 
     console.log(user)
 
@@ -33,7 +34,9 @@ const SignUp = () => {
                     displayName: name
                 }
                 updateUser(userInfo)
-                    .then(() => { })
+                    .then(() => {
+                        navigate('/');
+                    })
                     .catch(err => console.log(err))
             })
 
