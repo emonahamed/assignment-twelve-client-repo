@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const AddProduct = () => {
@@ -18,6 +19,7 @@ const AddProduct = () => {
         const phoneNumber = form.phonenumber.value;
         const description = form.description.value;
         const yearofpurchase = form.yearofpurchase.value;
+        const email = form.useremail.value;
 
 
         const image = form.image.files[0];
@@ -50,21 +52,25 @@ const AddProduct = () => {
                         condition: condition,
                         phoneNumber: phoneNumber,
                         description: description,
-                        yearofpurchase: yearofpurchase
+                        yearofpurchase: yearofpurchase,
+                        email: email
                     }
 
                     console.log(booking);
-                    // fetch('http://localhost:5000/users', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'content-type': 'application/json'
-                    //     },
-                    //     body: JSON.stringify(booking)
-                    // })
-                    //     .then(res => res.json())
-                    //     .then(result => {
-                    //         console.log(result);
-                    //     })
+                    fetch('http://localhost:5000/allproduct', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(booking)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            if (result.acknowledged) {
+                                toast('product added successfully')
+                                form.reset();
+                            }
+                        })
 
 
 
@@ -90,7 +96,8 @@ const AddProduct = () => {
         <div>
             <p className='text-bold text-orange-500'>Add product</p>
             <form onSubmit={handleBooking} >
-                <p> Seller Name:   <input type="text" value={user?.displayName} name='username' placeholder="Type here" className="input  w-full max-w-xs my-2" required /></p>
+                <p> Name:   <input type="text" value={user?.displayName} name='username' placeholder="Type here" className="input  w-full max-w-xs " required /></p>
+                <p>  Email:   <input type="text" value={user?.email} name='useremail' placeholder="Type here" className="input  w-full max-w-xs " required /></p>
                 <div>
                     <label className="label">
                         <span className="label-text">Condition</span>
