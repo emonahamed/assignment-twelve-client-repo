@@ -14,8 +14,8 @@ const AllProducts = () => {
         fetch(`http://localhost:5000/category/${categoryName.id}`)
             .then(res => res.json())
             .then(data => setcategoryProduct(data));
-    }, [])
-    console.log(categoryProduct)
+    }, [cardDetails])
+    console.log(categoryProduct);
 
 
 

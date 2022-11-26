@@ -53,7 +53,8 @@ const AddProduct = () => {
                         phoneNumber: phoneNumber,
                         description: description,
                         yearofpurchase: yearofpurchase,
-                        email: email
+                        email: email,
+                        isBooked: false
                     }
 
                     console.log(booking);

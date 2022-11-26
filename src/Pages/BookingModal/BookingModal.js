@@ -8,7 +8,8 @@ const BookingModal = ({ cardDetails, setCardDetails }) => {
 
 
     console.log(cardDetails)
-    const { name, resalePrice } = cardDetails;
+    const { name, resalePrice, _id } = cardDetails;
+
 
     const handleBooking = event => {
         event.preventDefault();
@@ -19,14 +20,15 @@ const BookingModal = ({ cardDetails, setCardDetails }) => {
         const price = form.price.value;
         const phoneNumber = form.phoneNumber.value;
         const meetingPlace = form.meetingPlace.value;
-
+        console.log(_id)
         const booking = {
             productName: productName,
             userName: name,
             userEmail: email,
             price: price,
             phoneNumber: phoneNumber,
-            meetingPlace: meetingPlace
+            meetingPlace: meetingPlace,
+            productId: _id
         }
 
         fetch('http://localhost:5000/bookings', {
