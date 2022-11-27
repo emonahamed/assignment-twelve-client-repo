@@ -8,7 +8,7 @@ const Banner = () => {
                 <img src={image} alt='img' className=" rounded-lg shadow-2xl w-1/2" />
                 <div>
                     <h1 className="text-5xl font-bold">Want to Earn!!!</h1>
-                    <p className="py-6">Most trusted website on earth to sell your used products</p>
+                    <p className="py-6">Just hit the get started button</p>
                     <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>

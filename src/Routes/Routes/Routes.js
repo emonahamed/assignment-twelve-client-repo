@@ -3,10 +3,12 @@ import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import AddProduct from "../../Pages/AddProduct/AddProduct";
 import AllProducts from "../../Pages/AllProducts/AllProducts";
+import Blogs from "../../Pages/Blogs/Blogs";
 import AllSellers from "../../Pages/Dashboard/AllSellers/AllSellers";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import FourOFour from "../../Pages/FourOFour/FourOFour";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 import ManageProducts from "../../Pages/ManageProducts/ManageProducts";
@@ -27,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/blogs',
+                element: <Blogs></Blogs>
             },
             {
                 path: '/signup',
@@ -64,6 +70,10 @@ const router = createBrowserRouter([
                 element: <SellerRoute><ManageProducts></ManageProducts></SellerRoute>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <FourOFour></FourOFour>
     }
 
 ])

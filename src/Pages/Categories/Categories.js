@@ -13,15 +13,20 @@ const Categories = () => {
     // console.log(categories);
 
     return (
-        <div className=' grid gap-4 my-2 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ' >
-            {
-                categories.map(category => <CategoryCard key={category._id}
-                    category={category}
+        <div>
+            <div className="divider">...</div>
+            <p className='text-center'>Categories</p>
+            <div className="divider">...</div>
+            <div className=' grid gap-4 my-2 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ' >
+                {
+                    categories.map(category => <CategoryCard key={category._id}
+                        category={category}
 
-                ></CategoryCard>)
-            }
+                    ></CategoryCard>)
+                }
 
 
+            </div>
         </div>
     );
 };

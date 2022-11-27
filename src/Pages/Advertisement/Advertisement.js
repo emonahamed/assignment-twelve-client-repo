@@ -13,9 +13,7 @@ const Advertisement = () => {
 
     return (
         <div>
-            <div className="divider">....</div>
-            <p className='text-3xl text-center text-white'>Advertised Itmes</p>
-            <div className="divider">....</div>
+
             <div className=' grid gap-3 my-2 justify-items-center  grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 {
                     advertisedItems?.map(advertise =>
