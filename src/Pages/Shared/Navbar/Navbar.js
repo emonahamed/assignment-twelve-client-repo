@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import homeicon from '../../../assests/homeicon.png'
 
 const Navbar = () => {
 
@@ -42,7 +43,11 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl" to="/">SellBite</Link>
+
+
+                <Link className="btn btn-ghost normal-case text-xl" to="/"> <img src={homeicon} className="w-10 mx-1" alt="" /> SellBite</Link>
+
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

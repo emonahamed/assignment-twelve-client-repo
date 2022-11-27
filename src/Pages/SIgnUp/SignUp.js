@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
@@ -5,7 +6,48 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser, updateUser, user } = useContext(AuthContext);
+
+
+    const saveGoogleUser = (name, email) => {
+        const user = {
+            name,
+            email,
+            role: 'user'
+        };
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("save user", data);
+                navigate('/');
+            })
+    }
+
+
+
+    const { createUser, updateUser, user, providerLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                saveGoogleUser(user.displayName, user.email)
+
+
+            })
+            .catch(error => console.error(error))
+    }
+
+
+
     const [signUpError, setsignUpError] = useState('');
     const navigate = useNavigate();
 
@@ -110,15 +152,18 @@ const SignUp = () => {
                             </select>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign Up</button>
+                            <button className="btn btn-outline btn-accent">Sign Up</button>
                         </div>
                     </form>
                     {
                         signUpError && <p className='text-red-600'>{signUpError}</p>
                     }
                     <p className='mx-auto my-3'>Already have an account<Link to='/login'><span className=' mx-2 text-orange-600'>Login</span></Link> </p>
+                    <button onClick={handleGoogleSignIn} className='btn btn-active my-5 mx-5'>Sign In With Google</button>
                 </div>
+
             </div>
+
         </div>
     );
 };
