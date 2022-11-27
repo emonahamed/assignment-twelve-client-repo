@@ -48,7 +48,7 @@ const ManageProducts = () => {
                         <tr>
                             <th></th>
                             <th>Product Name</th>
-                            <th>pricer</th>
+                            <th>price</th>
                             <th>Action</th>
                             <th>Status</th>
                         </tr>
@@ -60,6 +60,16 @@ const ManageProducts = () => {
                                 <td>{book.name}</td>
                                 <td>{book.resalePrice}</td>
                                 <td><button onClick={() => handleDeleteDoctor(book)} className='btn btn-sm'>Delete</button></td>
+                                <td><button className='btn btn-sm btn-outline btn-primary'>
+
+                                    {
+                                        book.isBooked === true ? <p>sold</p>
+                                            :
+                                            <p>available</p>
+
+                                    }
+
+                                </button></td>
                             </tr>)
                         }
                     </tbody>

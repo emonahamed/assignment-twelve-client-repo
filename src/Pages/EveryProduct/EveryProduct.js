@@ -33,6 +33,12 @@ const EveryProduct = ({ category, setCardDetails }) => {
                             :
                             <p>Booked</p>
                     }
+                    {/* {
+                        isBooked ? <p>sold</p>
+                            :
+                            <p>available</p>
+
+                    } */}
 
 
 
