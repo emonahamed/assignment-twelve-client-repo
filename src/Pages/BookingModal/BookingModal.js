@@ -46,14 +46,6 @@ const BookingModal = ({ cardDetails, setCardDetails }) => {
                     toast.success('booking confirmed')
                 }
             })
-
-
-
-
-
-        console.log(booking)
-        // console.log(price, name, email, phoneNumber, meetingPlace, productName)
-
     }
 
     return (
@@ -76,7 +68,6 @@ const BookingModal = ({ cardDetails, setCardDetails }) => {
                         <p> Phone Number :   <input type="number" name='phoneNumber' placeholder="Type here" className="input input-bordered input-accent w-full max-w-xs my-2" required /></p>
                         <p> Meeting Place :   <input type="text" name='meetingPlace' placeholder="Type here" className="input input-bordered input-accent w-full max-w-xs  my-2" required /></p>
                         <input className='w-full max-w-s btn btn-outline my-5 ' type="submit" name="" id="" value="Submit" />
-
                     </form>
 
                 </div>

@@ -2,34 +2,29 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import toast from 'react-hot-toast';
 
-const AllUsers = () => {
-
-
-
-
+const AllSellers = () => {
 
 
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('http://localhost:5000/sellers');
             const data = await res.json();
             return data;
         }
     })
 
     const handleUserDelete = (user) => {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`http://localhost:5000/sellers/${user._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
             .then(data => {
                 if (data.deletedCount > 0) {
                     console.log(data);
-                    toast('user deleted successfully');
+                    toast('seller deleted successfully');
                     refetch()
                 }
-
             })
     }
 
@@ -50,7 +45,7 @@ const AllUsers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Favorite Color</th>
+                            <th>Favorite Color 2</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -70,4 +65,4 @@ const AllUsers = () => {
     );
 };
 
-export default AllUsers;
+export default AllSellers;

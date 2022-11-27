@@ -1,0 +1,36 @@
+import { data } from 'autoprefixer';
+import React, { useEffect, useState } from 'react';
+import AdvertisedCard from '../AdvertisedCard/AdvertisedCard';
+
+const Advertisement = () => {
+    const [advertisedItems, setAdvertisedItems] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/advertise`)
+            .then(res => res.json())
+            .then(data => setAdvertisedItems(data));
+    }, [])
+
+    return (
+        <div>
+            <div className="divider">....</div>
+            <p className='text-3xl text-center text-white'>Advertised Itmes</p>
+            <div className="divider">....</div>
+            <div className=' grid gap-3 my-2 justify-items-center  grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+                {
+                    advertisedItems?.map(advertise =>
+                        <AdvertisedCard key={advertise._id}
+                            advertise={advertise}
+                        >
+
+
+
+                        </AdvertisedCard>)
+                }
+            </div>
+
+        </div>
+    );
+};
+
+export default Advertisement;

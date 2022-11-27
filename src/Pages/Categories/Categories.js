@@ -13,7 +13,7 @@ const Categories = () => {
     // console.log(categories);
 
     return (
-        <div className=' grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-5' >
+        <div className=' grid gap-4 my-2 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 ' >
             {
                 categories.map(category => <CategoryCard key={category._id}
                     category={category}

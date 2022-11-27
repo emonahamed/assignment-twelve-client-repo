@@ -30,10 +30,12 @@ const MyOrders = () => {
                             <th>price</th>
                             <th>Phone number</th>
                             <th>Meeting Place</th>
+                            <th>Payment</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
+
                             bookings?.map((booking, i) => <tr
                                 key={booking._id}>
                                 <th>{i + 1}</th>
@@ -41,6 +43,7 @@ const MyOrders = () => {
                                 <td>{booking.price}</td>
                                 <td>{booking.phoneNumber}</td>
                                 <td>{booking.meetingPlace}</td>
+                                <button className='btn btn-sm'>pay</button>
                             </tr>)
                         }
                     </tbody>

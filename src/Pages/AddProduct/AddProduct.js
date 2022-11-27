@@ -1,9 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider';
 
 const AddProduct = () => {
     const { user } = useContext(AuthContext);
+
+    const navigate = useNavigate();
+
+
+
     const handleBooking = event => {
         event.preventDefault();
         const form = event.target;
@@ -20,6 +26,7 @@ const AddProduct = () => {
         const description = form.description.value;
         const yearofpurchase = form.yearofpurchase.value;
         const email = form.useremail.value;
+
 
 
         const image = form.image.files[0];
@@ -70,6 +77,7 @@ const AddProduct = () => {
                             if (result.acknowledged) {
                                 toast('product added successfully')
                                 form.reset();
+                                navigate('/dashboard/manageproducts')
                             }
                         })
 

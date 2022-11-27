@@ -4,11 +4,23 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const ManageProducts = () => {
     const [deletingDoctor, setDeletingDoctor] = useState(null)
-
     const { user } = useContext(AuthContext);
+    const handleAdvertise = book => {
+        console.log(book)
 
-
-
+        fetch(`http://localhost:5000/update/${book._id}`, {
+            method: "PUT",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                refetch();
+            })
+    }
 
 
 
@@ -23,8 +35,8 @@ const ManageProducts = () => {
         }
     });
 
-    const handleDeleteDoctor = doctor => {
-        fetch(`http://localhost:5000/products/${doctor._id}`, {
+    const handleDeleteProduct = book => {
+        fetch(`http://localhost:5000/products/${book._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())
@@ -33,6 +45,14 @@ const ManageProducts = () => {
                 refetch();
             })
     }
+
+
+
+
+
+
+
+
 
 
     return (
@@ -51,6 +71,7 @@ const ManageProducts = () => {
                             <th>price</th>
                             <th>Action</th>
                             <th>Status</th>
+                            <th>Advertisement</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -59,13 +80,25 @@ const ManageProducts = () => {
                                 <th>{i + 1}</th>
                                 <td>{book.name}</td>
                                 <td>{book.resalePrice}</td>
-                                <td><button onClick={() => handleDeleteDoctor(book)} className='btn btn-sm'>Delete</button></td>
+                                <td><button onClick={() => handleDeleteProduct(book)} className='btn btn-sm'>Delete</button></td>
                                 <td><button className='btn btn-sm btn-outline btn-primary'>
 
                                     {
                                         book.isBooked === true ? <p>sold</p>
                                             :
                                             <p>available</p>
+
+                                    }
+
+                                </button></td>
+                                <td><button className='btn btn-sm btn-outline btn-success'>
+
+                                    {
+                                        book.isBooked === true ? <p>sold</p>
+                                            :
+                                            book.isAdvertise === true ? <p>Advertised</p>
+                                                :
+                                                <button onClick={() => handleAdvertise(book)}>Advertise</button>
 
                                     }
 
