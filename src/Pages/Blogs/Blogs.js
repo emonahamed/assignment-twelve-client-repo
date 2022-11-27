@@ -6,7 +6,7 @@ const Blogs = () => {
             <div className="hero-content text-center flex flex-col">
                 <div >
                     <h1 className="text-2xl font-bold ">1. What are the different ways to manage a state in a React application?</h1>
-                    <p className="py-3 text-purple-500">In React apps, there are at least seven ways to handle the state. Let us briefly explore a few of them in this part.Some of them are url,Web Storage,Local State,Lifted State,Derived State. </p>
+                    <p className="py-3 text-purple-500">In React apps, there are at least seven ways to handle the state.Some of them are url,Web Storage,Local State,Lifted State,Derived State. </p>
                 </div>
                 <div >
                     <h1 className="text-2xl font-bold ">2.How does prototypical inheritance work?</h1>

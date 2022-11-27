@@ -24,12 +24,12 @@ const Statistics = () => {
 
             <div className="stat">
                 <div className="stat-figure text-secondary">
-                    <p className='text-white'>Page Ratings</p>
+                    <p className='text-white'>Website Ratings</p>
                     <div className="rating">
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-green-400" />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-green-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-green-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-green-400" checked />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
 
                     </div>
