@@ -126,7 +126,7 @@ const AddProduct = () => {
                     <select name='category' className=" input input-bordered required:  select w-full max-w-xs required:">
                         <option selected>iphone</option>
                         <option>samsung</option>
-                        <option>oneplpus</option>
+                        <option>oneplus</option>
                         <option>xiaomi</option>
                     </select>
                 </div>

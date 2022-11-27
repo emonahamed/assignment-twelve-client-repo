@@ -1,3 +1,20 @@
+1.Project Name: Sell Bite 
+2.Live Site Link :
+3.My projet features and overView:
+* My project is a very userFriendly Website.
+* My project is basically a website of Selling and Buying website of used second hand mobiles.
+* I tried to implement evryting i know about mern stack in this project .
+* I used React ,React Router,firebase , mongodb ,tailwind,daisy ui ect.
+* my website is fully securre Website.
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

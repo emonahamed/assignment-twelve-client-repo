@@ -7,7 +7,7 @@ const EveryProduct = ({ category, setCardDetails }) => {
 
 
 
-    const { category: ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse, picture, isBooked } = category;
+    const { category: ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse, picture, isBooked, isVerified } = category;
 
     console.log(isBooked)
     // console.log(ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse)
@@ -21,7 +21,16 @@ const EveryProduct = ({ category, setCardDetails }) => {
                     <p className="py-1 text=xl"> <span className='text-orange-600'>location: </span>{location}</p>
                     <p className="py-1 text=xl"> <span className='text-orange-600'>Original Price : </span>{originalPrice}</p>
                     <p className="py-1 text=xl"> <span className='text-orange-600'> Resale Price : </span>{resalePrice}</p>
-                    <p className="py-1 text=xl"> <span className='text-orange-600'>Seller Name : </span>{sellerName}</p>
+                    <p className="py-1 text=xl">
+                        <div className='flex'>
+                            <span className='text-orange-600 mx-1 '> Seller Name : </span> {sellerName}
+                            {isVerified ? <img className='w-5 mx-2' src="https://i.ibb.co/Fz6H8Dd/valid-vector-icon-png-260889.jpg" alt="" />
+                                :
+                                <></>
+                            }
+                        </div>
+
+                    </p>
                     <p className="py-1 text=xl"> <span className='text-orange-600'>Years Of Use : </span>{yearsOfUse}</p>
                     {
                         !isBooked ? <label
