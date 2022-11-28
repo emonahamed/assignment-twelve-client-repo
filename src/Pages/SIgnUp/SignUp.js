@@ -143,7 +143,7 @@ const SignUp = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span className="label-text">User Type</span>
+                                <span className="label-text">Account Type</span>
                             </label>
 
                             <select name='userType' className=" input input-bordered required:  select w-full max-w-xs">

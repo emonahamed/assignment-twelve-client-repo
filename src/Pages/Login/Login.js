@@ -73,6 +73,7 @@ const Login = () => {
                         </div>
                     </form>
                     <p className='mx-auto my-3'>New to this website<Link to='/signup'><span className=' mx-2 text-orange-600'>SignUp</span></Link> </p>
+                    <p className='p-3'>Go to<Link to='/signup'><span className=' mx-2 text-orange-600'>SignUp</span></Link> page for sign in with Google</p>
                 </div>
 
             </div>

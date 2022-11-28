@@ -7,7 +7,7 @@ const EveryProduct = ({ category, setCardDetails }) => {
 
 
 
-    const { category: ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse, picture, isBooked, isVerified } = category;
+    const { category: location, name, originalPrice, resalePrice, sellerName, yearsOfUse, picture, isBooked, isVerified, postedDate } = category;
 
     console.log(isBooked)
     // console.log(ProductName, location, name, originalPrice, postedDate, resalePrice, sellerName, status, yearsOfUse)
@@ -28,6 +28,7 @@ const EveryProduct = ({ category, setCardDetails }) => {
                                     <p className="py-1 text=xl"> <span className='text-orange-600'>location: </span>{location}</p>
                                     <p className="py-1 text=xl"> <span className='text-orange-600'>Original Price : </span>{originalPrice}</p>
                                     <p className="py-1 text=xl"> <span className='text-orange-600'> Resale Price : </span>{resalePrice}</p>
+                                    <p className="py-1 text=xl"> <span className='text-orange-600'> posted Date : </span>{postedDate}</p>
                                     <p className="py-1 text=xl">
                                         <div className='flex'>
                                             <span className='text-orange-600 mx-1 '> Seller Name : </span> {sellerName}

@@ -45,7 +45,8 @@ const AllSellers = () => {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Role</th>
-                            <th>Favorite Color 2</th>
+                            <th>Action</th>
+                            <th>Verify</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +57,7 @@ const AllSellers = () => {
                                 <td>{user.email}</td>
                                 <td>{user.role}</td>
                                 <td><button onClick={() => handleUserDelete(user)} className='btn btn-primary'>Delete</button></td>
+                                <td><button className='btn btn-secondary'>verify</button></td>
                             </tr>)
                         }
                     </tbody>
