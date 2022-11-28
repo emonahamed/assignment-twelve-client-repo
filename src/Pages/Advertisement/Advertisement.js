@@ -13,6 +13,13 @@ const Advertisement = () => {
 
     return (
         <div>
+            {
+                advertisedItems ? <p>
+                    <div className="divider">....</div>
+                    <p className='text-xl text-orange-300 text-center'>  Advertise Items</p>
+                    <div className="divider">...</div>
+                </p> : <></>
+            }
 
             <div className=' grid gap-3 my-2 justify-items-center  grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                 {
@@ -20,9 +27,6 @@ const Advertisement = () => {
                         <AdvertisedCard key={advertise._id}
                             advertise={advertise}
                         >
-
-
-
                         </AdvertisedCard>)
                 }
             </div>

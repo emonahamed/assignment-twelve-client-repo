@@ -148,7 +148,7 @@ const AddProduct = () => {
                     <input required type="file" name="image" accept='image/*' id="image" />
                 </div>
 
-                <p className='my-1'>please Note : Adding a product might take some time</p>
+                <p className='my-1 text-white'>please Note : Adding a product might take some time</p>
                 <input className='max-w-s btn w-1/4 btn-outline my-5 ' type="submit" name="" id="" value="Add Product" />
 
 
