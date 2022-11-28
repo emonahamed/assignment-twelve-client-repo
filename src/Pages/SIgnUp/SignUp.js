@@ -14,7 +14,7 @@ const SignUp = () => {
             email,
             role: 'user'
         };
-        fetch('http://localhost:5000/users', {
+        fetch('https://assignment-twelve-server-theta.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -96,7 +96,7 @@ const SignUp = () => {
                 email,
                 role: userType
             };
-            fetch('http://localhost:5000/users', {
+            fetch('https://assignment-twelve-server-theta.vercel.app/users', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

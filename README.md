@@ -1,5 +1,5 @@
 1.Project Name: Sell Bite 
-2.Live Site Link :
+2.Live Site Link : https://assignment-twelve-eca9f.web.app
 3.My projet features and overView:
 * My project is a very userFriendly Website.
 * My project is basically a website of Selling and Buying website of used second hand mobiles.
@@ -8,6 +8,8 @@
 * my website is fully securre Website.
 
 
+adminEmail: emon@gmail.com
+adminPassword: 123456
 
 
 

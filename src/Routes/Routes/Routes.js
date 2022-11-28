@@ -41,7 +41,7 @@ const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <PrivateRoute><AllProducts></AllProducts></PrivateRoute>,
-                // loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`)
+                // loader: ({ params }) => fetch(`https://assignment-twelve-server-theta.vercel.app/category/${params.id}`)
             },
         ]
     },

@@ -8,14 +8,14 @@ const AllSellers = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/sellers');
+            const res = await fetch('https://assignment-twelve-server-theta.vercel.app/sellers');
             const data = await res.json();
             return data;
         }
     })
 
     const handleUserDelete = (user) => {
-        fetch(`http://localhost:5000/sellers/${user._id}`, {
+        fetch(`https://assignment-twelve-server-theta.vercel.app/sellers/${user._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

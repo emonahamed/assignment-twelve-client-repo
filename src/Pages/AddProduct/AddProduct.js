@@ -66,7 +66,7 @@ const AddProduct = () => {
                     }
 
                     console.log(booking);
-                    fetch('http://localhost:5000/allproduct', {
+                    fetch('https://assignment-twelve-server-theta.vercel.app/allproduct', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'

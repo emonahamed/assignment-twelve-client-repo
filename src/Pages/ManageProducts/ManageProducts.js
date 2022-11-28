@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const handleAdvertise = book => {
         console.log(book)
 
-        fetch(`http://localhost:5000/update/${book._id}`, {
+        fetch(`https://assignment-twelve-server-theta.vercel.app/update/${book._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",
@@ -24,7 +24,7 @@ const ManageProducts = () => {
 
 
 
-    const url = `http://localhost:5000/products?email=${user?.email}`;
+    const url = `https://assignment-twelve-server-theta.vercel.app/products?email=${user?.email}`;
 
     const { data: bookings = [], refetch } = useQuery({
         queryKey: ['bookings', user?.email],
@@ -36,7 +36,7 @@ const ManageProducts = () => {
     });
 
     const handleDeleteProduct = book => {
-        fetch(`http://localhost:5000/products/${book._id}`, {
+        fetch(`https://assignment-twelve-server-theta.vercel.app/products/${book._id}`, {
             method: "DELETE"
         })
             .then(res => res.json())

@@ -11,7 +11,7 @@ const AllProducts = () => {
     console.log(categoryName.id);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/category/${categoryName.id}`)
+        fetch(`https://assignment-twelve-server-theta.vercel.app/category/${categoryName.id}`)
             .then(res => res.json())
             .then(data => setcategoryProduct(data));
     }, [cardDetails])
