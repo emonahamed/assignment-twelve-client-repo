@@ -61,7 +61,8 @@ const AddProduct = () => {
                         description: description,
                         yearofpurchase: yearofpurchase,
                         email: email,
-                        isBooked: false
+                        isBooked: false,
+                        isVerified: false
                     }
 
                     console.log(booking);
